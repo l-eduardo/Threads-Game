@@ -3,9 +3,8 @@
 
 #include <mutex>
 #include "position.h"
-#include "positionedItem.h"
 
-class Ship : public PositionedItem {
+class Ship {
 private:
     std::mutex moveMtx;
     int actualLife;
@@ -16,6 +15,9 @@ private:
 public:
     Ship(Position startPos, int maxLife, int speed);
     int getLife();
+    void move(Position newPos);
+    void moveToTop();
+    void moveDown();
     void setLife(int life);
     Position getPosition();
 };

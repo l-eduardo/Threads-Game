@@ -16,7 +16,7 @@ void Ship::move(Position newPos)
     return;
 }
 
-void Ship::moveUp()
+void Ship::moveToTop()
 {
     this->position.y -= speed;
 }
