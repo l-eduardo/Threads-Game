@@ -1,5 +1,8 @@
 #include "platform.h"
+#include "bullet.h"
+#include "position.h"
 #include <unistd.h>
+#include <stdio.h>
 #include <memory>
 
 Platform::Platform(Position startPos, int maxBullets)

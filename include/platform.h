@@ -2,9 +2,10 @@
 #define PLATFORM_H
 
 #include "position.h"
-#include "bullet.h"
 #include <mutex>
 #include <memory>
+
+class Bullet;
 
 enum class CannonPosition { LEFT, MIDDLE_LEFT, UP, MIDDLE_RIGHT, RIGHT};
 

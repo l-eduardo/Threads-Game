@@ -6,9 +6,11 @@
 #include <unistd.h>
 
 int main() {
+    int max_width = 64;
+    int max_height = 32;
     Position posShip = {5, 0};
     Ship ship1 = {posShip, 3, 1};
-    Position posPlat = {getmaxx(stdscr), getmaxy(stdscr) - 1};
+    Position posPlat = {max_height, max_width/2};
     Platform plat = {posPlat, 7};
 
     initscr();             // Inicializa a tela ncurses
