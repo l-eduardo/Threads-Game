@@ -1,5 +1,4 @@
 #include "ship.h"
-#include <mutex>
 
 
 Ship::Ship(Position startPos, int maxLife, int speed)

@@ -12,9 +12,11 @@ class Bullet {
         Position position;
 
     public:
-        Bullet(int speed, Position startPos, CannonPosition direction);
-        void move();
+        Bullet(int speed, Position* startPos, CannonPosition direction);
         bool isAlive();
+        Position* getPosition();
+        int getSpeed();
+        void move();
         void kill();
 };
 

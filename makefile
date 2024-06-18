@@ -4,7 +4,7 @@
 CXX = g++
 
 # Flags do compilador
-CXXFLAGS = -Iinclude -Wall -Wextra -std=c++17
+CXXFLAGS = -Iinclude -Wall -Wextra -std=c++14 -lpthreads
 
 # Diretórios
 INCLUDE_DIR = include

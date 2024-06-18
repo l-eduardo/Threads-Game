@@ -11,10 +11,12 @@ enum class CannonPosition { LEFT, MIDDLE_LEFT, UP, MIDDLE_RIGHT, RIGHT};
 
 class Platform {
 public:
-    Platform(Position startPos, int maxBullets);
+    Platform(Position startPos, int maxBullets, std::mutex &rechargeMtx);
     void recharge();
     std::unique_ptr<Bullet> shoot();
     Position getPosition();
+    CannonPosition getCannonPosition();
+    void setCannonPosition(CannonPosition cannonPosition);
     int getBullets();
 
 
@@ -23,7 +25,7 @@ private:
     int maxBullets;
     CannonPosition cannonPosition;
     int actualBullets;
-    std::mutex rechargeMtx;
+    std::mutex* rechargeMtx;
 };
 
 #endif // PLATFORM_H

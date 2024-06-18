@@ -1,12 +1,10 @@
 #ifndef SHIP_H
 #define SHIP_H
 
-#include <mutex>
 #include "position.h"
 
 class Ship {
 private:
-    std::mutex moveMtx;
     int actualLife;
     Position position;
     int maxLife;

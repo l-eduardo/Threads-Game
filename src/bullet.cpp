@@ -1,9 +1,11 @@
 #include "bullet.h"
+#include <iostream>
 
-Bullet::Bullet(int speed, Position startPos, CannonPosition direction)
+Bullet::Bullet(int speed, Position* startPos, CannonPosition direction)
 {
+    // std::cout << "Bullet created" << std::endl;
     this->speed = speed;
-    this->position = startPos;
+    this->position = *startPos;
     this->direction = direction;
     this->alive = true;
 }
@@ -37,6 +39,16 @@ void Bullet::move()
 bool Bullet::isAlive()
 {
     return this->alive;
+}
+
+Position* Bullet::getPosition()
+{
+    return &this->position;
+}
+
+int Bullet::getSpeed()
+{
+    return this->speed;
 }
 
 void Bullet::kill()
