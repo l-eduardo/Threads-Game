@@ -101,7 +101,7 @@ void drawPositionedItems(Platform* plat){
         shipsMtx.unlock();
         mvprintw(18, 0, "plat x: %i", plat->getPosition().x);
         mvprintw(19, 0, "plat y: %i", plat->getPosition().y);
-        mvprintw(20, 0, "bullets: %i", bullets.size());
+        mvprintw(20, 0, "bullets: %i", static_cast<int>(bullets.size()));
         mvprintw(21, 0, "plat bullets: %i", plat->getBullets());
 
         bulletsMtx.lock();
@@ -165,7 +165,6 @@ void positionControl(){
         i = 0;
         for (auto &bullet : bullets){
             if(!bullet.isAlive()){
-                auto bulletToDelete = &bullets.at(i);
                 bullets.erase(bullets.begin() + i);
                 continue;
             };

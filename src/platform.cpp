@@ -7,6 +7,7 @@
 
 Platform::Platform(Position startPos, int maxBullets, std::mutex &rechargeMtx)
 {
+
     this->position = startPos;
     this->maxBullets = maxBullets;
     this->actualBullets = maxBullets;
@@ -26,6 +27,7 @@ std::unique_ptr<Bullet> Platform::shoot()
     if(this->rechargeMtx->try_lock()){
         actualBullets--;
         auto b = std::make_unique<Bullet>(1, &position, cannonPosition);
+        usleep(100001);
         this->rechargeMtx->unlock();
         return b;
     }

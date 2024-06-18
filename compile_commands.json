@@ -1,0 +1,82 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-std=c++14",
+      "-c",
+      "-o",
+      "build/bullet.o",
+      "src/bullet.cpp"
+    ],
+    "directory": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game",
+    "file": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/src/bullet.cpp",
+    "output": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/build/bullet.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-std=c++14",
+      "-c",
+      "-o",
+      "build/kbreader.o",
+      "src/kbreader.cpp"
+    ],
+    "directory": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game",
+    "file": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/src/kbreader.cpp",
+    "output": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/build/kbreader.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-std=c++14",
+      "-c",
+      "-o",
+      "build/platform.o",
+      "src/platform.cpp"
+    ],
+    "directory": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game",
+    "file": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/src/platform.cpp",
+    "output": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/build/platform.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-std=c++14",
+      "-c",
+      "-o",
+      "build/ship.o",
+      "src/ship.cpp"
+    ],
+    "directory": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game",
+    "file": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/src/ship.cpp",
+    "output": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/build/ship.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-std=c++14",
+      "-c",
+      "-o",
+      "build/main.o",
+      "main.cpp"
+    ],
+    "directory": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game",
+    "file": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/main.cpp",
+    "output": "/home/luizeduardo/_dev/faculdade/sistemas-operacionais/t1-kolliver/Threads-Game/build/main.o"
+  }
+]
