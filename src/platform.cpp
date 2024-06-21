@@ -17,8 +17,8 @@ Platform::Platform(Position startPos, int maxBullets, std::mutex &rechargeMtx)
 void Platform::recharge()
 {
     this->rechargeMtx->lock();
+    sleep(3);
     actualBullets = maxBullets;
-    sleep(1);
     this->rechargeMtx->unlock();
 }
 
