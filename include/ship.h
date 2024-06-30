@@ -9,6 +9,9 @@ private:
     Position position;
     int maxLife;
     int speed;
+    bool alive;
+    int width = 3;
+    int height = 3;
 
 public:
     Ship(Position startPos, int maxLife, int speed);
@@ -17,6 +20,11 @@ public:
     void moveToTop();
     void moveDown();
     void setLife(int life);
+    void damage(int damage);
+    void kill();
+    bool isAlive();
+    int getWidth();
+    int getHeight();
     Position getPosition();
 };
 

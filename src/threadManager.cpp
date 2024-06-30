@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ncurses.h>
 #include <thread>
 #include <mutex>
 #include <condition_variable>
@@ -8,8 +9,8 @@
 #include <vector>
 #include "threadManager.h"
 
-ThreadManager::ThreadManager() {
-		for (int i = 0; i < 3; ++i) {
+ThreadManager::ThreadManager(int threadCount) {
+		for (int i = 0; i < threadCount; ++i) {
 				threads.push_back(std::thread(&ThreadManager::worker, this));
 		}
 }
@@ -35,7 +36,7 @@ void ThreadManager::startAction(const std::string& key, std::function<void()> ac
 				taskQueue.push(key);
 				cv.notify_one();
 		} else {
-				std::cout << "Ação '" << key << "' já está em fila ou em execução.\n";
+				// std::cout << "Ação '" << key << "' já está em fila ou em execução.\n";
 		}
 }
 
@@ -63,13 +64,13 @@ void ThreadManager::worker() {
 				}
 
 				if (task) {
-						std::cout << "Thread " << std::this_thread::get_id() << " executando ação '" << taskKey << "'\n";
+						// std::cout << "Thread " << std::this_thread::get_id() << " executando ação '" << taskKey << "'\n";
 						task();
 						{
 								std::lock_guard<std::mutex> lock(taskMutex);
 								taskMap.erase(taskKey);
 						}
-						std::cout << "Ação '" << taskKey << "' concluída.\n";
+						// std::cout << "Ação '" << taskKey << "' concluída.\n";
 				}
 		}
 }

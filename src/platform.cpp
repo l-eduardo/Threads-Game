@@ -4,6 +4,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <memory>
+#include <iostream>
+#include <ncurses.h>
+
 
 Platform::Platform(Position startPos, int maxBullets, std::mutex &rechargeMtx)
 {
@@ -16,6 +19,7 @@ Platform::Platform(Position startPos, int maxBullets, std::mutex &rechargeMtx)
 
 void Platform::recharge()
 {
+    mvprintw(0, 0, "Recarregando...");
     this->rechargeMtx->lock();
     sleep(3);
     actualBullets = maxBullets;
@@ -24,15 +28,15 @@ void Platform::recharge()
 
 std::unique_ptr<Bullet> Platform::shoot()
 {
-    if(this->rechargeMtx->try_lock()){
-        actualBullets--;
-        auto b = std::make_unique<Bullet>(1, &position, cannonPosition);
-        usleep(100001);
-        this->rechargeMtx->unlock();
-        return b;
+    if(actualBullets == 0){
+        return nullptr;
     }
     
-    return nullptr;    
+    actualBullets--;
+    auto b = std::make_unique<Bullet>(1, &position, cannonPosition);
+    usleep(100001);
+    this->rechargeMtx->unlock();
+    return b;    
 }
 
 Position Platform::getPosition()
