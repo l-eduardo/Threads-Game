@@ -29,7 +29,7 @@ $(BUILD_DIR)/$(EXEC): $(OBJECTS_WITH_PATH) $(BUILD_DIR)
 	$(CXX) $(patsubst %, $(BUILD_DIR)/%, $(OBJECTS_NAME)) -g -g0 -o $(BUILD_DIR)/$(EXEC) -lncurses
 
 %.o: $(BUILD_DIR) %.cpp
-	$(CXX) $(CXXFLAGS) -c $(word 2, $^) -o $(BUILD_DIR)/$(notdir $@)
+	$(CXX) $(CXXFLAGS) -c $(word 2, $^) -g -o $(BUILD_DIR)/$(notdir $@)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)

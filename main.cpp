@@ -136,9 +136,9 @@ void drawPositionedItems(Platform* plat) {
           mvprintw(y, x, "0");
         }
       }
-      mvprintw(ship.getPosition().y - 1, ship.getPosition().x, "ooo");
-      mvprintw(ship.getPosition().y - 2, ship.getPosition().x, ". .");
       mvprintw(ship.getPosition().y - 3, ship.getPosition().x, " . ");
+      mvprintw(ship.getPosition().y - 2, ship.getPosition().x, ". .");
+      mvprintw(ship.getPosition().y - 1, ship.getPosition().x, "...");
 
 
     }

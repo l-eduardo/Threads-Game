@@ -1,1 +1,4 @@
 # Threads-Game
+
+
+PARA EXECUTAR BASTA RODAR O COMANDO ```MAKE RUN```
